@@ -1,0 +1,6 @@
+﻿services:
+  film-pproject.infrastructure:
+    image: film-pproject.infrastructure
+    build:
+      context: .
+      dockerfile: Film-PProject.Infrastructure/Dockerfile

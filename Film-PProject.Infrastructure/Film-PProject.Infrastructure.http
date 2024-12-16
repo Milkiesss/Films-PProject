@@ -1,0 +1,6 @@
+@Film_PProject.Infrastructure_HostAddress = http://localhost:5016
+
+GET {{Film_PProject.Infrastructure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

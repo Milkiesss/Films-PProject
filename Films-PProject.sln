@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Film-PProject.Infrastructure", "Film-PProject.Infrastructure\Film-PProject.Infrastructure.csproj", "{361C9510-4072-4585-9767-97F3633EE8A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B8033958-9DB2-44DF-9B08-EB01111E2589}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films-PProject.Domain", "Films-PProject.Domain\Films-PProject.Domain.csproj", "{9F47D8C7-5CAB-46B3-BE14-84323F78C4DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films-PProject.Application", "Films-PProject.Application\Films-PProject.Application.csproj", "{EFE45318-8C07-4D5B-9DF1-5AEBB4926A37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{361C9510-4072-4585-9767-97F3633EE8A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361C9510-4072-4585-9767-97F3633EE8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361C9510-4072-4585-9767-97F3633EE8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361C9510-4072-4585-9767-97F3633EE8A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F47D8C7-5CAB-46B3-BE14-84323F78C4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F47D8C7-5CAB-46B3-BE14-84323F78C4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F47D8C7-5CAB-46B3-BE14-84323F78C4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F47D8C7-5CAB-46B3-BE14-84323F78C4DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFE45318-8C07-4D5B-9DF1-5AEBB4926A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE45318-8C07-4D5B-9DF1-5AEBB4926A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE45318-8C07-4D5B-9DF1-5AEBB4926A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE45318-8C07-4D5B-9DF1-5AEBB4926A37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
