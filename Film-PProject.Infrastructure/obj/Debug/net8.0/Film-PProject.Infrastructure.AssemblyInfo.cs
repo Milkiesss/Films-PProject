@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Film-PProject.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7e45b1b216ab78419763a6784cdd4782bf0ee1e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e176ece503c8e545696e27e58fc2489ef7dab32")]
 [assembly: System.Reflection.AssemblyProductAttribute("Film-PProject.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Film-PProject.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
