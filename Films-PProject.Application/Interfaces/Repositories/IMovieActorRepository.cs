@@ -2,7 +2,7 @@
 
 namespace Films_PProject.Application.Interfaces.Repositories;
 
-public interface IMovieActorRepository
+public interface IMovieActorRepository : IBaseRepository<MovieActor>
 {
-    Task DeleteActorFromMovieAsync(MovieActor movieActor, CancellationToken cancellationToken);
+    Task<bool> DeleteActorFromMovieAsync(MovieActor movieActor, CancellationToken cancellationToken);
 }

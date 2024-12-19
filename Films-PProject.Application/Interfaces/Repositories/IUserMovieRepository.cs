@@ -2,8 +2,9 @@
 
 namespace Films_PProject.Application.Interfaces.Repositories;
 
-public interface IUserMovieRepository
+public interface IUserMovieRepository 
 {
-    Task<bool> AddFavoriteMovie(UserMovies userMovie,CancellationToken cancellationToken);
-    Task DeleteFavoriteMovie(UserMovies userMovie,CancellationToken cancellationToken);
+    Task<bool> AddFavoriteMovieAsync(UserMovies userMovie,CancellationToken cancellationToken);
+    public Task<List<UserMovies>> GetAllUserMoviesAsync(Guid userId, CancellationToken cancellationToken);
+    Task DeleteFavoriteMovieAsync(UserMovies userMovie,CancellationToken cancellationToken);
 }

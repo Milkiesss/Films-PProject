@@ -28,20 +28,14 @@ public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
         return entity;
     }
 
-    public async Task DeleteAsync(Guid Id, CancellationToken cancellationToken)
+    public async Task<bool> DeleteAsync(Guid Id, CancellationToken cancellationToken)
     {
         var entity = await _db.Set<T>().FindAsync(Id,cancellationToken);
         if(entity is null)
             throw new KeyNotFoundException("Entity not found");
         _db.Set<T>().Remove(entity);
         await _db.SaveChangesAsync(cancellationToken);
-    }
-
-    public async Task<T?> GetByIdAsync(Guid Id, CancellationToken cancellationToken)
-    {
-        return await _db.Set<T>()
-            .AsNoTracking()
-            .FirstOrDefaultAsync(e => EF.Property<Guid>(e, "Id") == Id,cancellationToken);
+        return true;
     }
 
     public async Task<List<T>> GetAllAsync(CancellationToken cancellationToken)

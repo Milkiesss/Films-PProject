@@ -4,3 +4,10 @@
     build:
       context: .
       dockerfile: Film-PProject.Infrastructure/Dockerfile
+    environment:
+        - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=FilmsPP;Username=postgres;Password=12345
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+
+

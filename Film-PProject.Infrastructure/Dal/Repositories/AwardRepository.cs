@@ -9,4 +9,5 @@ public class AwardRepository : BaseRepository<Award>, IAwardRepository
     public AwardRepository(DataContext db) : base(db)
     {
     }
+    
 }

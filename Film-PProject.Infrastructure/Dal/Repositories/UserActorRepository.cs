@@ -13,9 +13,9 @@ public class UserActorRepository : BaseRepository<UserActors>, IUserActorReposit
         _db = db;
     }
 
-    public async Task<bool> AddFavoriteActor(UserActors userActor, CancellationToken cancellationToken)
+    public async Task<bool> AddFavoriteActorAsync(UserActors userActor, CancellationToken cancellationToken)
     {
-        var existFavorits = _db.UserActors
+        var existFavorits =await _db.UserActors
             .FirstOrDefaultAsync(x=>x.ActorId==userActor.ActorId&& x.UserId == userActor.UserId);
         if (existFavorits is not null)
             throw new Exception("Actor already favorited.");
@@ -29,7 +29,15 @@ public class UserActorRepository : BaseRepository<UserActors>, IUserActorReposit
         return true;
     }
 
-    public async Task DeleteFavoriteActor(UserActors userActor, CancellationToken cancellationToken)
+    public async Task<List<UserActors>> GetAllUserActorAsync(Guid userId, CancellationToken cancellationToken)
+    {
+        return await _db.UserActors
+            .Where(x => x.UserId == userId)
+            .Include(x => x.Actor) 
+            .ToListAsync(cancellationToken);
+    }
+    
+    public async Task DeleteFavoriteActorAsync(UserActors userActor, CancellationToken cancellationToken)
     {
         _db.UserActors.Remove(userActor);
         await _db.SaveChangesAsync(cancellationToken);

@@ -13,7 +13,7 @@ public class MovieActorRepository : BaseRepository<MovieActor>, IMovieActorRepos
         _db = db;
     }
     
-    public async Task DeleteActorFromMovieAsync(MovieActor movieActor,CancellationToken cancellationToken)
+    public async Task<bool> DeleteActorFromMovieAsync(MovieActor movieActor,CancellationToken cancellationToken)
     {
         var actor = await _db.MovieActors.FindAsync(movieActor.ActorId,cancellationToken);
         if(actor is null)
@@ -25,5 +25,6 @@ public class MovieActorRepository : BaseRepository<MovieActor>, IMovieActorRepos
         
         _db.MovieActors.Remove(movieActor);
         await _db.SaveChangesAsync(cancellationToken);
+        return true;
     }
 }

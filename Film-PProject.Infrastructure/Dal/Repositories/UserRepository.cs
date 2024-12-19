@@ -19,19 +19,20 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         return await _db.Users.AnyAsync(u => u.Email == email);
     }
 
-    public async Task UpdateRole(Guid userId,int Role, CancellationToken cancellationToken)
+    public async Task<bool> UpdateRole(Guid userId,RoleType Role, CancellationToken cancellationToken)
     {
         var user = await _db.Users.FindAsync(userId);
         
         if (user is null) 
             throw new KeyNotFoundException("User not found");
         
-        user.Role = (RoleType)Role;
+        user.Role = Role;
         
         await _db.SaveChangesAsync(cancellationToken);
+        return true;
     }
 
-    public async Task<User> GetByEmail(string email, CancellationToken cancellationToken)
+    public async Task<User> GetByEmailAsync(string email, CancellationToken cancellationToken)
     {
         return await _db.Users.FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
     }

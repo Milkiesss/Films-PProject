@@ -4,6 +4,7 @@ namespace Films_PProject.Application.Interfaces.Repositories;
 
 public interface IUserActorRepository
 {
-    Task<bool> AddFavoriteActor(UserActors userActor,CancellationToken cancellationToken);
-    Task DeleteFavoriteActor(UserActors userActor,CancellationToken cancellationToken);
+    Task<bool> AddFavoriteActorAsync(UserActors userActor,CancellationToken cancellationToken);
+    public Task<List<UserActors>> GetAllUserActorAsync(Guid userId, CancellationToken cancellationToken);
+    Task DeleteFavoriteActorAsync(UserActors userActor,CancellationToken cancellationToken);
 }

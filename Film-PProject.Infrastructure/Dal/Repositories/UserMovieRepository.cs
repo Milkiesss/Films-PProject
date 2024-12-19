@@ -13,9 +13,9 @@ public class UserMovieRepository : BaseRepository<UserMovies>, IUserMovieReposit
         _db = db;
     }
 
-    public async Task<bool> AddFavoriteMovie(UserMovies userMovie, CancellationToken cancellationToken)
+    public async Task<bool> AddFavoriteMovieAsync(UserMovies userMovie, CancellationToken cancellationToken)
     {
-        var existFavorits = _db.UserMovies
+        var existFavorits =await _db.UserMovies
             .FirstOrDefaultAsync(x=>x.MovieId==userMovie.MovieId&& x.UserId == userMovie.UserId);
         if (existFavorits is not null)
             throw new Exception("Movie already favorited.");
@@ -28,8 +28,14 @@ public class UserMovieRepository : BaseRepository<UserMovies>, IUserMovieReposit
         await _db.SaveChangesAsync(cancellationToken);
         return true;
     }
-
-    public async Task DeleteFavoriteMovie(UserMovies userMovie, CancellationToken cancellationToken)
+    public async Task<List<UserMovies>> GetAllUserMoviesAsync(Guid userId, CancellationToken cancellationToken)
+    {
+        return await _db.UserMovies
+            .Where(x => x.UserId == userId)
+            .Include(x => x.Movie)
+            .ToListAsync(cancellationToken);
+    }
+    public async Task DeleteFavoriteMovieAsync(UserMovies userMovie, CancellationToken cancellationToken)
     {
         _db.UserMovies.Remove(userMovie);
         await _db.SaveChangesAsync(cancellationToken);

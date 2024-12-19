@@ -1,6 +1,8 @@
-﻿namespace Films_PProject.Application.Interfaces.Repositories;
+﻿using Films_PProject.Domain.Entities;
 
-public interface IAwardRepository
+namespace Films_PProject.Application.Interfaces.Repositories;
+
+public interface IAwardRepository : IBaseRepository<Award>
 {
     
 }

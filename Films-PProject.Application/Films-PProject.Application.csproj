@@ -16,4 +16,9 @@
       <ProjectReference Include="..\Films-PProject.Domain\Films-PProject.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Dtos\MovieDto\MovieActor\Request\" />
+      <Folder Include="Dtos\MovieDto\MovieActor\Response\" />
+    </ItemGroup>
+
 </Project>
